@@ -1,8 +1,8 @@
 <div>
-  <h2>{{playerToDisplay.name}}</h2>
-  <h4>{{playerToDisplay.position}}</h4>
-  <h5>Age:  {{playerToDisplay.age}}</h5>
+  <h2>{{(playerToDisplay | async).name}}</h2>
+  <h4>{{(playerToDisplay | async).position}}</h4>
+  <h5>Age:  {{(playerToDisplay | async).age}}</h5>
   <br>
   <h4>PROFESSIONAL EXPERIENCE</h4>
-  <p>{{playerToDisplay.experience}}</p>
+  <p>{{(playerToDisplay | async).experience}}</p>
 </div>

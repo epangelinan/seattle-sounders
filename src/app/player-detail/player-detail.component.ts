@@ -12,7 +12,7 @@ import { FirebaseListObservable } from 'angularfire2/database';
   providers: [PlayerService]
 })
 export class PlayerDetailComponent implements OnInit {
-  playerId: number;
+  playerId: string;
   playerToDisplay;
 
   constructor(
@@ -23,7 +23,7 @@ export class PlayerDetailComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.forEach((urlParameters) => {
-      this.playerId = parseInt(urlParameters['id']);
+      this.playerId = urlParameters['id'];
     });
     this.playerToDisplay = this.playerService.getPlayerById(this.playerId);
   }
