@@ -7,5 +7,10 @@
     <p><strong>Age: </strong>{{player.age}}</p>
     <p><strong>HT: </strong>{{player.height}}</p>
     <p><strong>WT: </strong>{{player.weight}}</p>
+    <div *ngIf="currentRoute === '/admin'">
+      {{player.experience}}
+      <hr>
+      <app-edit-player></app-edit-player>
+    </div>
   </div>
 </div>
