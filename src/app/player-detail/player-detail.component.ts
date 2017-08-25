@@ -3,6 +3,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
 import { Player } from '../player.model';
 import { PlayerService } from '../player.service';
+import { FirebaseListObservable } from 'angularfire2/database';
 
 @Component({
   selector: 'app-player-detail',
@@ -12,7 +13,7 @@ import { PlayerService } from '../player.service';
 })
 export class PlayerDetailComponent implements OnInit {
   playerId: number;
-  playerToDisplay: Player;
+  playerToDisplay;
 
   constructor(
     private route: ActivatedRoute,

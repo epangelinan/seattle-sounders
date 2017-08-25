@@ -1,0 +1,45 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Add New Player</h3>
+  </div>
+  <div class="panel-body">
+    <div>
+      <div>
+        <label>Player Name:</label>
+        <br>
+        <input #newName>
+      </div>
+
+      <div>
+        <label>Player Number and Position:</label>
+        <br>
+        <input #newPosition>
+      </div>
+
+      <div>
+        <label>Player Age:</label>
+        <br>
+        <input #newAge>
+      </div>
+
+      <div>
+        <label>Player Height:</label>
+        <br>
+        <input #newHeight>
+      </div>
+
+      <div>
+        <label>Player Weight:</label>
+        <br>
+        <input #newWeight>
+      </div>
+
+      <div>
+        <label>Player Experience:</label>
+        <br>
+        <textarea #newExperience></textarea>
+      </div>
+      <button (click)="submitForm(newName.value, newPosition.value, newAge.value, newHeight.value, newWeight.value, newExperience.value); newName.value=''; newPosition.value=''; newAge.value=''; newHeight.value=''; newWeight.value=''; newExperience.value=''">Add</button>
+    </div>
+  </div>
+</div>
