@@ -1,22 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Player } from '../player.model';
 import { Router } from '@angular/router';
+import { PlayerService } from '../player.service';
 
 @Component({
   selector: 'app-players',
   templateUrl: './players.component.html',
-  styleUrls: ['./players.component.css']
+  styleUrls: ['./players.component.css'],
+  providers: [PlayerService]
 })
 
-export class PlayersComponent {
+export class PlayersComponent implements OnInit{
+  players: Player[];
 
-  constructor(private router: Router){}
-  
-  players: Player[] = [
-    new Player("Osvaldo Alonso", "6 Midfielder", 31, "5'11", 155, 1),
-    new Player("Clint Dempsey", "2 Forward ", 34, "6'1", 170, 2),
-    new Player("Brad Evans", "3 Defender/Midfielder", 32, "6'1", 170, 3)
-  ];
+  constructor(private router: Router, private playerService: PlayerService){}
+
+  ngOnInit(){
+    this.players = this.playerService.getPlayers();
+  }
 
   goToDetailPage(clickedPlayer: Player) {
     this.router.navigate(['players', clickedPlayer.id]);
