@@ -1,10 +1,11 @@
 <h2>Seattle Sounders Players</h2>
 
-<div *ngFor="let player of players" class="panel panel-default">
+<div *ngFor="let player of players" (click)="goToDetailPage(player)" class="panel panel-default">
   <div class="panel-body">
     <h3>{{player.name}}</h3>
     <p>{{player.position}}</p>
     <p><strong>Age: </strong>{{player.age}}</p>
-    <p><strong>HT: </strong>{{player.height}} <strong>WT: </strong>{{player.weight}}</p>
+    <p><strong>HT: </strong>{{player.height}}</p>
+    <p><strong>WT: </strong>{{player.weight}}</p>
   </div>
 </div>
