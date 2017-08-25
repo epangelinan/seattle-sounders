@@ -23,4 +23,14 @@ export class PlayerService {
     return this.database.object('players/' + playerId);
   }
 
+  updatePlayer(localUpdatedPlayer){
+    var playerEntryInFirebase = this.getPlayerById(localUpdatedPlayer.$key);
+    playerEntryInFirebase.update({name: localUpdatedPlayer.name,
+                                position: localUpdatedPlayer.position,
+                                age: localUpdatedPlayer.age,
+                                height: localUpdatedPlayer.height,
+                                weight: localUpdatedPlayer.weight,
+                                experience: localUpdatedPlayer.experience});
+    }
+
 }

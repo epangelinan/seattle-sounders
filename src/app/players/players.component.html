@@ -1,8 +1,8 @@
 <h2>Seattle Sounders Players</h2>
 
-<div *ngFor="let player of players | async" (click)="goToDetailPage(player)" class="panel panel-default">
+<div *ngFor="let player of players | async"  class="panel panel-default">
   <div class="panel-body">
-    <h3>{{player.name}}</h3>
+    <h3 (click)="goToDetailPage(player)">{{player.name}}</h3>
     <p>{{player.position}}</p>
     <p><strong>Age: </strong>{{player.age}}</p>
     <p><strong>HT: </strong>{{player.height}}</p>
@@ -10,7 +10,7 @@
     <div *ngIf="currentRoute === '/admin'">
       {{player.experience}}
       <hr>
-      <app-edit-player></app-edit-player>
+      <app-edit-player [selectedPlayer]="player"></app-edit-player>
     </div>
   </div>
 </div>
