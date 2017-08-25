@@ -2,6 +2,26 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
 
+## Setup/Installation Requirements
+
+* _Clone the project to your machine desktop_
+* _Navigate into the project folder_
+* _Run the following commands:_
+* _$ npm install_
+* _$ bower install_
+* _Acquire your own Firebase credentials_
+* _Create a new file called api-keys.ts in the src/app directory_
+* _Place your Firebase credentials into api-keys.ts, like this (Your file should have your specific Firebase credentials and other information here, instead of xxxx):_
+export var masterFirebaseConfig = {
+    apiKey: "xxxx",
+    authDomain: "xxxx.firebaseapp.com",
+    databaseURL: "https://xxxx.firebaseio.com",
+    storageBucket: "xxxx.appspot.com",
+    messagingSenderId: "xxxx"
+  };
+* _Run the following command to launch the app in the browser:_
+* _$ ng serve_
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
